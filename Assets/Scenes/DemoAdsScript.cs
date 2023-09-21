@@ -15,7 +15,8 @@ public class DemoAdsScript : MonoBehaviour
 
     private void Awake()
     {
-
+        LoadBannerBtn.gameObject.SetActive(false);
+        LoadInterstitialBtn.gameObject.SetActive(false);
         AudienceNetworkAds.Initialize();
         AdSettings.AddTestDevice("5efe1787-95f0-446e-acaf-fb65bd5d6d77");
         
@@ -26,6 +27,8 @@ public class DemoAdsScript : MonoBehaviour
         LoadBannerBtn.onClick.AddListener(LoadBanner);
         LoadInterstitialBtn.onClick.AddListener(LoadInterstitial);
         ShowInterstitialBtn.onClick.AddListener(ShowInterstitial);
+        LoadBannerBtn.gameObject.SetActive(true);
+        LoadInterstitialBtn.gameObject.SetActive(true);
     }
        
     public void LoadBanner()
